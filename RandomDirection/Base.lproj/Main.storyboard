@@ -1,25 +1,92 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Right" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1t-DO-TPW">
+                                <rect key="frame" x="27" y="20" width="323" height="173"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="173" id="G4m-57-ISj"/>
+                                    <constraint firstAttribute="width" constant="323" id="R2e-Mu-zqD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32G-8L-Eli">
+                                <rect key="frame" x="38" y="536" width="298" height="64"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="bgf-OP-wAs"/>
+                                </constraints>
+                                <state key="normal" title="Click me for a random direction"/>
+                                <connections>
+                                    <action selector="DirectionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="udR-pG-drS"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uNJ-WY-L6c">
+                                <rect key="frame" x="0.0" y="340" width="170" height="125"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="xF4-dF-Qal"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="sJJ-M7-Rgn"/>
+                                </connections>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WBe-Gc-Cie">
+                                <rect key="frame" x="205" y="340" width="170" height="125"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="msi-W2-Lj2"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="6v2-Hl-Oxm"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Between" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PId-ds-AEg">
+                                <rect key="frame" x="31" y="292" width="109" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Repetitions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIm-dN-1Jl">
+                                <rect key="frame" x="247" y="292" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="i1t-DO-TPW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="102" id="54o-44-1LK"/>
+                            <constraint firstItem="32G-8L-Eli" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="44" id="VS0-hp-7aF"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="32G-8L-Eli" secondAttribute="bottom" constant="112" id="Wn2-bH-XcX"/>
+                            <constraint firstItem="i1t-DO-TPW" firstAttribute="centerX" secondItem="32G-8L-Eli" secondAttribute="centerX" id="fxn-hl-wfS"/>
+                            <constraint firstItem="i1t-DO-TPW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q6I-mY-PQV"/>
+                        </constraints>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="DirectionButton" destination="32G-8L-Eli" id="4WX-WE-buV"/>
+                        <outlet property="DisplayRandomDirection" destination="i1t-DO-TPW" id="VIi-9S-Rh0"/>
+                        <outlet property="RepetitionsPicker" destination="WBe-Gc-Cie" id="kwZ-Rn-XNd"/>
+                        <outlet property="StartTimePicker" destination="uNJ-WY-L6c" id="M1M-hc-bTG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="379.5" y="304.5"/>
         </scene>
     </scenes>
 </document>

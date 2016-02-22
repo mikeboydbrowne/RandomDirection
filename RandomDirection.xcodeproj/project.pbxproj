@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB1FCB841C7ABB4D001AD6AD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB1FCB831C7ABB4D001AD6AD /* QuartzCore.framework */; };
 		ABCE01071C77B86C00CA2E30 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCE01061C77B86C00CA2E30 /* main.m */; };
 		ABCE010A1C77B86C00CA2E30 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCE01091C77B86C00CA2E30 /* AppDelegate.m */; };
 		ABCE010D1C77B86C00CA2E30 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCE010C1C77B86C00CA2E30 /* ViewController.m */; };
@@ -15,6 +16,7 @@
 		ABCE01151C77B86C00CA2E30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABCE01131C77B86C00CA2E30 /* LaunchScreen.storyboard */; };
 		ABCE01201C77B86C00CA2E30 /* RandomDirectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCE011F1C77B86C00CA2E30 /* RandomDirectionTests.m */; };
 		ABCE012B1C77B86C00CA2E30 /* RandomDirectionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCE012A1C77B86C00CA2E30 /* RandomDirectionUITests.m */; };
+		ABCE01391C77BF7400CA2E30 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABCE01381C77BF7400CA2E30 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB1FCB831C7ABB4D001AD6AD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ABCE01021C77B86C00CA2E30 /* RandomDirection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomDirection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABCE01061C77B86C00CA2E30 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ABCE01081C77B86C00CA2E30 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		ABCE01261C77B86C00CA2E30 /* RandomDirectionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomDirectionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABCE012A1C77B86C00CA2E30 /* RandomDirectionUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RandomDirectionUITests.m; sourceTree = "<group>"; };
 		ABCE012C1C77B86C00CA2E30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABCE01381C77BF7400CA2E30 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB1FCB841C7ABB4D001AD6AD /* QuartzCore.framework in Frameworks */,
+				ABCE01391C77BF7400CA2E30 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +87,8 @@
 		ABCE00F91C77B86C00CA2E30 = {
 			isa = PBXGroup;
 			children = (
+				AB1FCB831C7ABB4D001AD6AD /* QuartzCore.framework */,
+				ABCE01381C77BF7400CA2E30 /* AVFoundation.framework */,
 				ABCE01041C77B86C00CA2E30 /* RandomDirection */,
 				ABCE011E1C77B86C00CA2E30 /* RandomDirectionTests */,
 				ABCE01291C77B86C00CA2E30 /* RandomDirectionUITests */,
@@ -499,6 +507,7 @@
 				ABCE01311C77B86C00CA2E30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ABCE01321C77B86C00CA2E30 /* Build configuration list for PBXNativeTarget "RandomDirectionTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +516,7 @@
 				ABCE01341C77B86C00CA2E30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ABCE01351C77B86C00CA2E30 /* Build configuration list for PBXNativeTarget "RandomDirectionUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +525,7 @@
 				ABCE01371C77B86C00CA2E30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
