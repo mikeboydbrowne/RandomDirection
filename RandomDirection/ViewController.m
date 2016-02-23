@@ -16,6 +16,7 @@
 @implementation ViewController
 
 int NumReps = 0;
+int TimeBetween = 0;
 
 -(IBAction)DirectionButton:(id)sender {
     
@@ -23,25 +24,27 @@ int NumReps = 0;
     
     
     //
-    RandomValue = arc4random() % 2;
-    int SleepLength = (arc4random() % 1001) / 1000;
-    [NSThread sleepForTimeInterval:1];
-    
-    // display and say left
-    if (RandomValue == 0) {
-        [NSThread sleepForTimeInterval:SleepLength];
-        AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Left"];
-        AVSpeechSynthesizer *syn = [[AVSpeechSynthesizer alloc] init];
-        [syn speakUtterance:utterance];
-        DisplayRandomDirection.text = [NSString stringWithFormat:@"Left"];
-    
-    // display and say right
-    } else {
-        [NSThread sleepForTimeInterval:SleepLength];
-        AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Right"];
-        AVSpeechSynthesizer *syn = [[AVSpeechSynthesizer alloc] init];
-        [syn speakUtterance:utterance];
-        DisplayRandomDirection.text = [NSString stringWithFormat:@"Right"];
+    for (int i = 0; i <= NumReps; i++) {
+        RandomValue = arc4random() % 2;
+        int SleepLength = (arc4random() % 1001) / 1000;
+        [NSThread sleepForTimeInterval:TimeBetween];
+        
+        // display and say left
+        if (RandomValue == 0) {
+            [NSThread sleepForTimeInterval:SleepLength];
+            AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Left"];
+            AVSpeechSynthesizer *syn = [[AVSpeechSynthesizer alloc] init];
+            [syn speakUtterance:utterance];
+            DisplayRandomDirection.text = [NSString stringWithFormat:@"Left"];
+            
+            // display and say right
+        } else {
+            [NSThread sleepForTimeInterval:SleepLength];
+            AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Right"];
+            AVSpeechSynthesizer *syn = [[AVSpeechSynthesizer alloc] init];
+            [syn speakUtterance:utterance];
+            DisplayRandomDirection.text = [NSString stringWithFormat:@"Right"];
+        }
     }
 }
 
@@ -76,17 +79,16 @@ int NumReps = 0;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-//    NSArray *data = [[NSArray alloc] initWithObjects:@0, @0, nil];
-//    if([pickerView isEqual: _StartTimePicker]){
-//        NSLog(@"You're going to wait %li seconds between reps", (long)row);
-//        data[0] = row;
-//    }
-//    if([pickerView isEqual: _RepetitionsPicker]){
-//        NSLog(@"You're going to be doing %li reps", (long)row);
-//        data[1] = row;
-//    }
-//
-//    return *data;
+    if([pickerView isEqual: _StartTimePicker]){
+        NSLog(@"You're going to wait %li seconds between reps", (long)row);
+        TimeBetween = (int)row;
+        
+    }
+    if([pickerView isEqual: _RepetitionsPicker]){
+        NSLog(@"You're going to be doing %li reps", (long)row);
+        NumReps = (int)row;
+        
+    }
 }
 
 - (void)viewDidLoad {
@@ -95,7 +97,7 @@ int NumReps = 0;
     
     self.TimeArray  = [[NSArray alloc] initWithObjects:@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10" ,nil];
     
-    self.RepetitionsArray = [[NSArray alloc] initWithObjects:@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18", @"19", @"20", nil];
+    self.RepetitionsArray = [[NSArray alloc] initWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18", @"19", @"20", nil];
     
     // style direction button
     DirectionButton.layer.cornerRadius = 10; // this value vary as per your desire
